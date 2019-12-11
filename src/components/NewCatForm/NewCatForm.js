@@ -22,12 +22,13 @@ class NewCatForm extends Component {
         return (
             <div>
                 <input
+                    className="field"
                     placeholder="Cat's Name"
                     type="text"
                     onChange={(event) => this.changeAnimalField(event, 'cat')}
                     value={this.props.cat}
                 />
-                <button onClick={this.addCat}>Add Cat</button>
+                <button className="btn" onClick={this.addCat}>Add Cat</button>
             </div>
         );
     }

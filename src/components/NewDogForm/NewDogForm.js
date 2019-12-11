@@ -22,12 +22,13 @@ class NewDogForm extends Component {
         return (
             <div>
                 <input
+                    className="field"
                     placeholder="Dog's Name"
                     type="text"
                     onChange={(event) => this.changeAnimalField(event, 'dog')}
                     value={this.state.dog}
                 />
-                <button onClick={this.addDog}>Add Dog</button>
+                <button className="btn" onClick={this.addDog}>Add Dog</button>
             </div>
         );
     }
