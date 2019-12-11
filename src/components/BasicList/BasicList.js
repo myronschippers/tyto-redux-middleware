@@ -16,10 +16,19 @@ class BasicList extends Component {
         return (
             <div>
                 <h2>{this.props.heading}</h2>
-                <ul>
-                    {/* RENDER LIST OF ELEMENTS */}
-                    {listOfElements}
-                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pet Name</th>
+                            <th>New Column</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {/* RENDER LIST OF ELEMENTS */}
+                        {listOfElements}
+                    </tbody>
+                </table>
             </div>
         );
     }

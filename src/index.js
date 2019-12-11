@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
 const firstReducer = (state={ kittyKat: 'Meow' }, action) => {
     // action = {
@@ -59,11 +60,13 @@ const dogReducer = (state=[], action) => {
 }
 
 const catReducer = (state=[], action) => {
+    // prev state
     if (action.type === 'ADD_CAT') {
         return [
             ...state,
             action.payload
         ]
+        // next state
     }
     return state;
 }
@@ -74,9 +77,9 @@ const storeInstance = createStore(
         secondReducer,
         catReducer,
         dogReducer
-    })
+    }),
     // manages our state data model in redux
-    
+    applyMiddleware(logger)
 ); 
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));

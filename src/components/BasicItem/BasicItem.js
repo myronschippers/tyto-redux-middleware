@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 class BasicItem extends Component {
     render() {
         return (
-            <li>{this.props.item}</li>
+            <tr>
+                <td>{this.props.item}</td>
+                <td>Something</td>
+            </tr>
         );
     }
 }
