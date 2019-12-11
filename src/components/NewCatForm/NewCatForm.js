@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class NewCatForm extends Component {
     state = {
@@ -34,4 +36,4 @@ class NewCatForm extends Component {
     }
 }
 
-export default NewCatForm;
+export default connect(mapStoreToProps)(NewCatForm);
